@@ -5,12 +5,11 @@
 
 /* Header */
 .main-header
-  padding-top: 50px
   padding-bottom: 200px
-  background: url("../img/header-bg.png") no-repeat center
-  background-size: cover
+  background: url("../img/header-bg.png") no-repeat center top
   &_top
     margin-bottom: 150px
+    padding-top: 50px
 
 ul.main-header_social
   margin: 0
@@ -74,9 +73,9 @@ form.main-register
       background: lighten($accent, 5%)
     &:active
       -webkit-transform: scale(.98)
-      -moz-transform: scale(.8)
+      -moz-transform: scale(.98)
       -ms-transform: scale(.98)
-      -o-transform: scale(.8)
+      -o-transform: scale(.98)
       transform: scale(.98)
   .header-appeal
     position: absolute
@@ -85,5 +84,54 @@ form.main-register
     background: url(../img/header-tooltip-shape.png) no-repeat 100% 0px
     padding-right: 50px
     line-height: 40px
+
+/* Sections */
+section
+  padding: 100px 0
+.dark-section
+  background: $dark-section_bg
+.work-img img
+  width: 100%
+.work-description
+  &_heading
+    position: relative
+    margin: 0 0 35px
+    font-size: 35px
+    font-family: $accent-font
+    color: #323232
+    padding-bottom: 25px
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      display: block
+      width: 68px
+      height: 1px
+      background: $accent
+  &_body
+    p
+      margin: 0
+    .general-txt
+      margin-bottom: 45px
+
+.work-benefit
+  margin-bottom: 50px
+  padding-left: 50px
+  position: relative
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 32px
+    height: 32px
+    background: $accent
+    border-radius: 4px
+  &_heading
+    color: $headings
+    margin-bottom: 15px
+    font-family: $accent-bold-font
 
 @import "media"

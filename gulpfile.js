@@ -1,7 +1,7 @@
 var gulp           = require('gulp'),
 		gutil          = require('gulp-util' ),
 		sass           = require('gulp-sass'),
-		browserSync    = require('browser-sync'),
+		// browserSync    = require('browser-sync'),
 		concat         = require('gulp-concat'),
 		uglify         = require('gulp-uglify'),
 		cleanCSS       = require('gulp-clean-css'),
@@ -14,14 +14,14 @@ var gulp           = require('gulp'),
 		fileinclude    = require('gulp-file-include'),
 		gulpRemoveHtml = require('gulp-remove-html');
 
-gulp.task('browser-sync', function() {
-	browserSync({
-		server: {
-			baseDir: 'app'
-		},
-		notify: false
-	});
-});
+//gulp.task('browser-sync', function() {
+//	browserSync({
+//		server: {
+//			baseDir: 'app'
+//		},
+//		notify: false
+//	});
+//});
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
@@ -30,7 +30,7 @@ gulp.task('sass', function() {
 		.pipe(sass())
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('app/css'))
-		.pipe(browserSync.reload({stream: true}))
+		// .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('libs', function() {
@@ -44,10 +44,10 @@ gulp.task('libs', function() {
 		.pipe(gulp.dest('app/js'));
 });
 
-gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
+gulp.task('watch', ['sass', 'libs', /*'browser-sync'*/], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
-	gulp.watch('app/*.html', browserSync.reload);
-	gulp.watch('app/js/**/*.js', browserSync.reload);
+	// gulp.watch('app/*.html', browserSync.reload);
+	// gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('imagemin', function() {
@@ -63,9 +63,6 @@ gulp.task('imagemin', function() {
 
 gulp.task('buildhtml', function() {
   gulp.src(['app/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@'
-    }))
     .pipe(gulpRemoveHtml())
     .pipe(gulp.dest('dist/'));
 });
