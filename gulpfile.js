@@ -27,6 +27,7 @@ gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.sass')
 		.pipe(rename({suffix: '.min', prefix : ''}))
 		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(sass())
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.reload({stream: true}))
