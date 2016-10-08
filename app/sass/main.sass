@@ -3,6 +3,14 @@
 @import "vars"
 @import "libs"
 
+/* General */
+.animate-up
+  -webkit-transition: all, .4s
+  -moz-transition: all, .4s
+  -ms-transition: all, .4s
+  -o-transition: all, .4s
+  transition: all, .4s
+
 /* Header */
 .main-header
   padding-bottom: 200px
@@ -85,9 +93,23 @@ form.main-register
     padding-right: 50px
     line-height: 40px
 
+
 /* Sections */
 section
   padding: 100px 0
+h3.section-heading
+  position: relative
+  font-size: 35px
+  font-family: $accent-font
+  text-align: center
+  padding-bottom: 25px
+  margin: 0 0 15px
+  color: $headings
+  background: url("../img/heading-line.png") no-repeat center bottom
+p.section_sub-heading
+  text-align: center
+  font-size: 17px
+  margin: 0 0 75px
 .dark-section
   background: $dark-section_bg
 .work-img img
@@ -127,11 +149,46 @@ section
     top: 0
     width: 32px
     height: 32px
-    background: $accent
     border-radius: 4px
   &_heading
     color: $headings
     margin-bottom: 15px
     font-family: $accent-bold-font
+  &.benefit-1:before
+    background: url("../img/icons/icon-2.png") no-repeat center, $accent
+  &.benefit-2:before
+    background: url("../img/icons/icon-1.png") no-repeat center, $accent
+  &.benefit-3:before
+    background: url("../img/icons/icon-4.png") no-repeat center, $accent
+  &.benefit-4:before
+    background: url("../img/icons/icon-3.png") no-repeat center, $accent
+
+/* Features */
+.feature
+  margin-bottom: 70px
+  &-icon
+    width: 50px
+    height: 50px
+    margin: 0 auto 30px
+    background: url("../img/icons/features-sprite.png") no-repeat
+  .f_icon-1
+    background-position: 0px -100px
+  .f_icon-2
+    background-position: 0px -50px
+  .f_icon-3
+    background-position: 0px 0px
+  .f_icon-4
+    background-position: 0px -250px
+  .f_icon-5
+    background-position: 0px -200px
+  .f_icon-6
+    background-position: 0px -150px
+  &-title
+    font-size: 20px
+    font-family: $accent-semibold-font
+    margin-bottom: 25px
+    color: $headings
+  &-description
+    margin: 0
 
 @import "media"
