@@ -10,6 +10,15 @@
   -ms-transition: all, .4s
   -o-transition: all, .4s
   transition: all, .4s
+i.status
+  display: inline-block
+  width: 12px
+  height: 12px
+  background: url("../img/icons/status-sprite.png") no-repeat
+  &.status-available
+    background-position: 0px 0px
+  &.status-unavailable
+    background-position: 0px -12px
 
 /* Header */
 .main-header
@@ -191,4 +200,76 @@ p.section_sub-heading
   &-description
     margin: 0
 
+/* Price */
+.price
+  border: 1px solid $border
+  &-header
+    -webkit-transition: background, .3s
+    -moz-transition: background, .3s
+    -ms-transition: background, .3s
+    -o-transition: background, .3s
+    transition: background, .3s
+    padding: 20px 0
+    background: $headings
+    color: #fff
+    span
+      font-family: $bold-font
+      color: $accent
+    &_title
+      font-family: $accent-semibold-font
+      font-size: 24px
+      margin-bottom: 12px
+  &-body
+    margin: 0
+    padding: 0
+    li
+      display: block
+      position: relative
+      padding: 0 30px
+      border-bottom: 1px dotted $border
+      line-height: 50px
+      span
+        float: right
+        color: $headings
+      i.status
+        position: absolute
+        right: 30px
+        top: 40%
+  &-footer
+    padding: 18px 30px
+    &_val
+      font-size: 18px
+      font-family: $accent-bold-font
+      line-height: 40px
+      color: $headings
+    &_btn
+      -webkit-transition: background, .3s
+      -moz-transition: background, .3s
+      -ms-transition: background, .3s
+      -o-transition: background, .3s
+      transition: background, .3s
+      float: right
+      border: 1px solid $main-txt
+      border-radius: 4px
+      background: transparent
+      line-height: 38px
+      padding: 0 10px
+
+.price:hover
+  -webkit-transform: scale(.988)
+  -moz-transform: scale(.988)
+  -ms-transform: scale(.988)
+  -o-transform: scale(.988)
+  transform: scale(.988)
+  -webkit-box-shadow: 0 0 10px 1px lighten($border, 2%)
+  -moz-box-shadow: 0 0 10px 1px lighten($border, 2%)
+  box-shadow: 0 0 10px 1px lighten($border, 2%)
+  .price-header
+    background: $accent
+    span
+      color: #fff
+  .price-footer_btn
+    background: $accent
+    border: none
+    color: #fff
 @import "media"
