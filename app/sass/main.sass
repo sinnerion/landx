@@ -373,6 +373,7 @@ p.section_sub-heading
       position: absolute
     &:before
       content: '"'
+      padding-top: 7px
       top: -19px
       left: 45%
       width: 32px
@@ -401,6 +402,56 @@ p.section_sub-heading
       margin-bottom: 10px
     .author-post
       font-size: 13px
+
+/* Registration */
+.registration-section
+  background: url("../img/registration-bg.png") no-repeat
+  background-size: cover
+  padding: 130px 0
+  .tagline
+    color: #fff
+    font-family: $accent-bold-font
+    span
+      display: block
+    &-top
+      font-size: 20px
+      margin-bottom: 20px
+    &-main
+      font-size: 35px
+      margin-bottom: 50px
+    &-btn
+      line-height: 52px
+      border: none
+      background: $accent
+      border-radius: 4px
+      padding: 0 30px
+      &:hover
+        background: lighten($accent, 2%)
+      &:active, &:focus
+        outline: none
+        -webkit-transform: scale(.988)
+        -moz-transform: scale(.988)
+        -ms-transform: scale(.988)
+        -o-transform: scale(.988)
+        transform: scale(.988)
+
+/* Contact */
+.contact-section
+  &_call
+    display: block
+    font-size: 24px
+    font-family: $accent-semibold-font
+    margin-bottom: 25px
+  &_link
+    display: inline-block
+    color: $accent
+    font-family: $accent-bold-font
+    font-size: 18px
+    padding-left: 26px
+    background: url("../img/icons/icon_7.png") no-repeat left center
+    &:hover
+      text-decoration: none
+      color: lighten($accent, 6%)
 
 
 /* Footer */

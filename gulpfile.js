@@ -11,7 +11,7 @@ var gulp           = require('gulp'),
 		pngquant       = require('imagemin-pngquant'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
-		fileinclude    = require('gulp-file-include'),
+		// fileinclude    = require('gulp-file-include'),
 		gulpRemoveHtml = require('gulp-remove-html');
 
 //gulp.task('browser-sync', function() {
@@ -74,7 +74,9 @@ gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], func
 
 	var buildCss = gulp.src([
 		'app/css/fonts.min.css',
-		'app/css/main.min.css'
+		'app/css/main.min.css',
+		'app/css/owl.carousel.css',
+		'app/css/owl.theme.css',
 		]).pipe(gulp.dest('dist/css'));
 
 	var buildFiles = gulp.src([
