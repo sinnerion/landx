@@ -39,4 +39,22 @@ $(document).ready(function(){
         });
     }
 
+    // Carousel
+    $(".main-carousel").owlCarousel({
+        loop:true,
+        margin:30,
+        dots:true,
+        dotsEach:true,
+        responsive: {
+            0:{
+                center:true,
+                dots:false,
+                items:1.5
+            },
+            992:{
+                items:3
+            }
+        }
+    });
+
 });
